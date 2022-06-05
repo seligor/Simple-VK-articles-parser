@@ -80,7 +80,7 @@ def get_articles(links: set, timeout: float) -> dict:
 
 
 def create_csv(csv_path: str, articles: dict) -> None:
-    with open(csv_path, 'w') as file:
+    with open(csv_path, 'w', encoding="utf-8") as file:
         writer = csv.DictWriter(file, delimiter=';', fieldnames=list(
             articles[0].keys()), quoting=csv.QUOTE_NONNUMERIC)
         writer.writeheader()
